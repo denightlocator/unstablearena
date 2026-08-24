@@ -1,0 +1,66 @@
+name: UnstableCharacters
+version: 1.0.0
+main: com.unstable.characters.UnstableCharacters
+api-version: '1.21'
+authors: [UnstableDev]
+description: Character claiming and kit management plugin for Unstable Arena
+
+commands:
+  claimcharacter:
+    description: Claim a character from Unstable SMP
+    usage: /claimcharacter <character>
+    permission: unstable.characters.claim
+  characters:
+    description: List available characters
+    usage: /characters [clan]
+    permission: unstable.characters.list
+  kits:
+    description: Kit management command
+    usage: /kits <create|delete|edit|give|list|cooldown|category|reload>
+    permission: unstable.kits.manage
+  kit:
+    description: Receive a kit
+    usage: /kit <kitname>
+    permission: unstable.kits.use
+  unclaim:
+    description: Remove your claimed character
+    usage: /unclaim
+    permission: unstable.characters.unclaim
+
+permissions:
+  unstable.characters.*:
+    description: All character permissions
+    default: op
+    children:
+      unstable.characters.claim: true
+      unstable.characters.list: true
+      unstable.characters.unclaim: true
+      unstable.characters.admin: true
+  unstable.characters.claim:
+    description: Claim a character
+    default: true
+  unstable.characters.list:
+    description: List characters
+    default: true
+  unstable.characters.unclaim:
+    description: Unclaim your character
+    default: true
+  unstable.characters.admin:
+    description: Admin character permissions
+    default: op
+  unstable.kits.*:
+    description: All kit permissions
+    default: op
+    children:
+      unstable.kits.manage: true
+      unstable.kits.use: true
+      unstable.kits.admin: true
+  unstable.kits.manage:
+    description: Create and edit kits
+    default: op
+  unstable.kits.use:
+    description: Use the kit command
+    default: true
+  unstable.kits.admin:
+    description: Give kits to others
+    default: op

@@ -1,0 +1,21 @@
+# UnstableCharacters Configuration
+# Character claiming and kit management for Unstable Arena
+
+# General Settings
+settings:
+  # Broadcast when someone claims a character
+  broadcast-claims: true
+
+  # Allow claiming already claimed characters (just takes over)
+  force-claim: false
+
+  # Reset display name when unclaiming
+  reset-on-unclaim: true
+
+# Kit Settings
+kits:
+  # Enable kit cooldowns globally
+  enable-cooldowns: true
+
+  # Default cooldown for all kits (seconds, 0 = no cooldown)
+  default-cooldown: 3600
